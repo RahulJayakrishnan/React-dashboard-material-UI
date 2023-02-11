@@ -2,7 +2,7 @@ import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
 import { mockTransactions } from "../../data/mockData";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
-import EmailIcon from "@mui/icons-material/Email";
+import CalendarMonth from "@mui/icons-material/CalendarMonth";
 import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import TrafficIcon from "@mui/icons-material/Traffic";
@@ -20,23 +20,8 @@ const Dashboard = () => {
   return (
     <Box m="20px">
       {/* HEADER */}
-      <Box display="flex" justifyContent="space-between" alignItems="center">
-        <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
-
-        <Box>
-          <Button
-            sx={{
-              backgroundColor: colors.blueAccent[700],
-              color: colors.grey[100],
-              fontSize: "14px",
-              fontWeight: "bold",
-              padding: "10px 20px",
-            }}
-          >
-            <DownloadOutlinedIcon sx={{ mr: "10px" }} />
-            Download Reports
-          </Button>
-        </Box>
+      <Box display="flex">
+        <Header title="Raku Capital" subtitle="its all going to zero" />
       </Box>
 
       {/* GRID & CHARTS */}
@@ -55,12 +40,12 @@ const Dashboard = () => {
           justifyContent="center"
         >
           <StatBox
-            title="12,361"
-            subtitle="Emails Sent"
-            progress="0.75"
-            increase="+14%"
+            title="521"
+            subtitle="Days since inception"
+            progress="1"
+            increase=""
             icon={
-              <EmailIcon
+              <CalendarMonth
                 sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
               />
             }
@@ -74,10 +59,10 @@ const Dashboard = () => {
           justifyContent="center"
         >
           <StatBox
-            title="431,225"
-            subtitle="Sales Obtained"
-            progress="0.50"
-            increase="+21%"
+            title="431%"
+            subtitle="All time ROI"
+            progress="0.21"
+            increase="+21% YoY"
             icon={
               <PointOfSaleIcon
                 sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
@@ -93,10 +78,10 @@ const Dashboard = () => {
           justifyContent="center"
         >
           <StatBox
-            title="32,441"
+            title="0"
             subtitle="New Clients"
-            progress="0.30"
-            increase="+5%"
+            progress="0.0"
+            increase=""
             icon={
               <PersonAddIcon
                 sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
@@ -112,10 +97,10 @@ const Dashboard = () => {
           justifyContent="center"
         >
           <StatBox
-            title="1,325,134"
+            title="134"
             subtitle="Traffic Received"
-            progress="0.80"
-            increase="+43%"
+            progress="0.12"
+            increase="+12% since last month"
             icon={
               <TrafficIcon
                 sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
@@ -143,14 +128,14 @@ const Dashboard = () => {
                 fontWeight="600"
                 color={colors.grey[100]}
               >
-                Revenue Generated
+                Asset Performance
               </Typography>
               <Typography
                 variant="h3"
                 fontWeight="bold"
                 color={colors.greenAccent[500]}
               >
-                $59,342.32
+                +128% MoM
               </Typography>
             </Box>
             <Box>
@@ -180,7 +165,7 @@ const Dashboard = () => {
             p="15px"
           >
             <Typography color={colors.grey[100]} variant="h5" fontWeight="600">
-              Recent Transactions
+              Recent Etherium Transactions
             </Typography>
           </Box>
           {mockTransactions.map((transaction, i) => (
@@ -224,7 +209,7 @@ const Dashboard = () => {
           p="30px"
         >
           <Typography variant="h5" fontWeight="600">
-            Campaign
+            Equities vs Crypto
           </Typography>
           <Box
             display="flex"
@@ -232,15 +217,15 @@ const Dashboard = () => {
             alignItems="center"
             mt="25px"
           >
-            <ProgressCircle size="125" />
+            <ProgressCircle size="125" progress="0.53"/>
             <Typography
               variant="h5"
               color={colors.greenAccent[500]}
               sx={{ mt: "15px" }}
             >
-              $48,352 revenue generated
+
             </Typography>
-            <Typography>Includes extra misc expenditures and costs</Typography>
+            <Typography>Equities:53 Crypto:47</Typography>
           </Box>
         </Box>
         <Box
@@ -253,7 +238,7 @@ const Dashboard = () => {
             fontWeight="600"
             sx={{ padding: "30px 30px 0 30px" }}
           >
-            Sales Quantity
+            Strategy Allocation
           </Typography>
           <Box height="250px" mt="-20px">
             <BarChart isDashboard={true} />
